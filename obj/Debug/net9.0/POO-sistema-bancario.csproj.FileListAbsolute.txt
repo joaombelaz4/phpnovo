@@ -1,0 +1,14 @@
+C:\Users\eliton_camargo\Desktop\POO-sistema-bancario\bin\Debug\net9.0\POO-sistema-bancario.exe
+C:\Users\eliton_camargo\Desktop\POO-sistema-bancario\bin\Debug\net9.0\POO-sistema-bancario.deps.json
+C:\Users\eliton_camargo\Desktop\POO-sistema-bancario\bin\Debug\net9.0\POO-sistema-bancario.runtimeconfig.json
+C:\Users\eliton_camargo\Desktop\POO-sistema-bancario\bin\Debug\net9.0\POO-sistema-bancario.dll
+C:\Users\eliton_camargo\Desktop\POO-sistema-bancario\bin\Debug\net9.0\POO-sistema-bancario.pdb
+C:\Users\eliton_camargo\Desktop\POO-sistema-bancario\obj\Debug\net9.0\POO-sistema-bancario.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\eliton_camargo\Desktop\POO-sistema-bancario\obj\Debug\net9.0\POO-sistema-bancario.AssemblyInfoInputs.cache
+C:\Users\eliton_camargo\Desktop\POO-sistema-bancario\obj\Debug\net9.0\POO-sistema-bancario.AssemblyInfo.cs
+C:\Users\eliton_camargo\Desktop\POO-sistema-bancario\obj\Debug\net9.0\POO-sistema-bancario.csproj.CoreCompileInputs.cache
+C:\Users\eliton_camargo\Desktop\POO-sistema-bancario\obj\Debug\net9.0\POO-sistema-bancario.dll
+C:\Users\eliton_camargo\Desktop\POO-sistema-bancario\obj\Debug\net9.0\refint\POO-sistema-bancario.dll
+C:\Users\eliton_camargo\Desktop\POO-sistema-bancario\obj\Debug\net9.0\POO-sistema-bancario.pdb
+C:\Users\eliton_camargo\Desktop\POO-sistema-bancario\obj\Debug\net9.0\POO-sistema-bancario.genruntimeconfig.cache
+C:\Users\eliton_camargo\Desktop\POO-sistema-bancario\obj\Debug\net9.0\ref\POO-sistema-bancario.dll
