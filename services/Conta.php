@@ -6,13 +6,11 @@ abstract class Conta
     protected $titular;
     protected $saldo;
 
-    public function __construct($numero = null, $titular = null)
+    public function __construct($numero, $titular)
     {
-        if ($numero != null && $titular != null) {
-            $this->setNumero($numero);
-            $this->setTitular($titular);
-            $this->saldo = 0;
-        }
+        $this->setNumero($numero);
+        $this->setTitular($titular);
+        $this->saldo = 0;
     }
 
     public function setNumero($numero)

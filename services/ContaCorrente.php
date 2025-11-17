@@ -2,7 +2,7 @@
 
 class ContaCorrente extends Conta
 {
-    public function __construct($numero = null, $titular = null)
+    public function __construct($numero, $titular)
     {
         parent::__construct($numero, $titular);
     }

@@ -6,13 +6,11 @@ class Titular
     private $cpf;
     private $endereco;
 
-    public function __construct($nome = null, $cpf = null, $endereco = null)
+    public function __construct($nome, $cpf, $endereco)
     {
-        if ($nome != null && $cpf != null && $endereco != null) {
-            $this->setNome($nome);
-            $this->setCpf($cpf);
-            $this->setEndereco($endereco);
-        }
+        $this->setNome($nome);
+        $this->setCpf($cpf);
+        $this->setEndereco($endereco);
     }
 
     public function setNome($nome)
