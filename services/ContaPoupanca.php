@@ -1,37 +1,32 @@
 <?php
-
+require_once 'Conta.php';
 class ContaPoupanca extends Conta
 {
-    public function __construct($numero, $titular)
-    {
-        parent::__construct($numero, $titular);
-    }
-
-    public function depositar($valor)
+    public function depositar(float $valor): void
     {
         if ($valor <= 0) {
             throw new Exception("O valor do depósito deve ser positivo.");
         }
 
-        $this->saldo = $this->saldo + $valor;
+        $this->saldo += $valor;
     }
 
-    public function sacar($valor)
+    public function sacar(float $valor): void
     {
-        $valorComTaxa = $valor * 1.005;
-        
         if ($valor <= 0) {
             throw new Exception("O valor do saque deve ser positivo.");
         }
+
+        $valorComTaxa = $valor * 1.005;
         
         if ($valorComTaxa > $this->saldo) {
             throw new Exception("Saldo insuficiente para o saque.");
         }
 
-        $this->saldo = $this->saldo - $valorComTaxa;
+        $this->saldo -= $valorComTaxa;
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return "Conta Poupança - " . parent::__toString();
     }

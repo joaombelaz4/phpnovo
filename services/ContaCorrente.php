@@ -1,37 +1,34 @@
 <?php
-
+require_once 'Conta.php';
 class ContaCorrente extends Conta
 {
-    public function __construct($numero, $titular)
-    {
-        parent::__construct($numero, $titular);
-    }
-
-    public function depositar($valor)
+    public function depositar(float $valor): void
     {
         if ($valor <= 0) {
             throw new Exception("O valor do depósito deve ser positivo.");
         }
 
-        $this->saldo = $this->saldo + ($valor * 0.99);
+       
+        $valorComTaxa = $valor * 0.99;
+        $this->saldo += $valorComTaxa;
     }
 
-    public function sacar($valor)
+    public function sacar(float $valor): void
     {
-        $valorComTaxa = $valor * 1.01;
-        
         if ($valor <= 0) {
             throw new Exception("O valor do saque deve ser positivo.");
         }
+
+        $valorComTaxa = $valor * 1.01;
         
         if ($valorComTaxa > $this->saldo) {
             throw new Exception("Saldo insuficiente para o saque.");
         }
 
-        $this->saldo = $this->saldo - $valorComTaxa;
+        $this->saldo -= $valorComTaxa;
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return "Conta Corrente - " . parent::__toString();
     }

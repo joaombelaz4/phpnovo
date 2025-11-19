@@ -1,19 +1,19 @@
 <?php
-
+require_once 'Titular.php';
 abstract class Conta
 {
-    protected $numero;
-    protected $titular;
-    protected $saldo;
+    protected int $numero;
+    protected Titular $titular;
+    protected float $saldo;
 
-    public function __construct($numero, $titular)
+    public function __construct(int $numero, Titular $titular)
     {
         $this->setNumero($numero);
-        $this->setTitular($titular);
-        $this->saldo = 0;
+        $this->titular = $titular;
+        $this->saldo = 0.0;
     }
 
-    public function setNumero($numero)
+    public function setNumero(int $numero): void
     {
         if ($numero <= 0) {
             throw new Exception("O número da conta deve ser positivo.");
@@ -21,43 +21,45 @@ abstract class Conta
         $this->numero = $numero;
     }
 
-    public function setTitular($titular)
-    {
-        if ($titular == null) {
-            throw new Exception("O titular da conta não pode ser nulo.");
-        }
-        $this->titular = $titular;
-    }
-
-    public function getNumero()
+    public function getNumero(): int
     {
         return $this->numero;
     }
 
-    public function getTitular()
+    public function getTitular(): Titular
     {
         return $this->titular;
     }
 
-    public function getSaldo()
+    public function getSaldo(): float
     {
         return $this->saldo;
     }
 
-    abstract public function depositar($valor);
+    abstract public function depositar(float $valor): void;
     
-    abstract public function sacar($valor);
+    abstract public function sacar(float $valor): void;
 
-    public function __toString()
+    public function __toString(): string
     {
-        return "Conta Número: " . $this->numero . ", Titular: " . $this->titular->getNome() . ", Saldo: R$ " . number_format($this->saldo, 2, ',', '.');
+        return sprintf(
+            "Conta Número: %d, Titular: %s, Saldo: R$ %.2f",
+            $this->numero,
+            $this->titular->getNome(),
+            $this->saldo
+        );
     }
 
-    public function transferir($contaDestino, $valor)
+    public function transferir(Conta $contaDestino, float $valor): void
     {
-        if ($contaDestino == null) {
-            throw new Exception("A conta de destino não pode ser nula.");
+        if ($valor <= 0) {
+            throw new Exception("O valor da transferência deve ser positivo.");
         }
+
+        if ($contaDestino === $this) {
+            throw new Exception("Não é possível transferir para a mesma conta.");
+        }
+
 
         $this->sacar($valor);
         $contaDestino->depositar($valor);
